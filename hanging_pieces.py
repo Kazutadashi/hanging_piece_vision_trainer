@@ -19,7 +19,16 @@ class ChessBoard:
         return self.current_board_fen
 
     def set_squares(self):
+        """
+        Goes through the FEN that is currently set and then sets the piece type for each square
+        :return:
+        """
+
+        # we split the FEN so we can go row by row
         split_fen = self.current_board_fen.split('/')
+
+        # to maintain the human-readability of the board, we use an ascii and standard
+        # representation of the current square
         current_square_ascii = [ord('a'), 8]
         current_square = 'a8'
 
